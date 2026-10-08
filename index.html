@@ -6,13 +6,16 @@
   <title>Fișă Tehnică - Pâine cu Maia "Gust de Gorj"</title>
   <style>
     :root {
-      --bg-color: #fcf8f2;
-      --card-bg: #ffffff;
-      --primary: #8c5a3c;
+      --primary: #5c3217;
+      --primary-dark: #3a1d0b;
       --accent: #d97724;
-      --text: #2c221e;
-      --text-muted: #6e5c54;
-      --border-radius: 16px;
+      --accent-light: #f3a660;
+      --gold: #e5a93c;
+      --card-bg: rgba(255, 250, 244, 0.93);
+      --text: #2c1a0e;
+      --text-muted: #6e5241;
+      --border-color: rgba(140, 90, 60, 0.2);
+      --border-radius: 20px;
     }
 
     * {
@@ -23,13 +26,14 @@
     }
 
     body {
-      background-color: var(--bg-color);
+      background: linear-gradient(rgba(28, 14, 6, 0.72), rgba(28, 14, 6, 0.82)),
+                  url('https://images.unsplash.com/photo-1509440159596-0249088772ff?auto=format&fit=crop&q=80&w=1200') center/cover no-repeat fixed;
       color: var(--text);
       display: flex;
       justify-content: center;
       align-items: center;
       min-height: 100vh;
-      padding: 20px;
+      padding: 20px 15px;
     }
 
     .container {
@@ -42,57 +46,69 @@
     #welcome-screen {
       text-align: center;
       background: var(--card-bg);
-      padding: 40px 24px;
+      backdrop-filter: blur(10px);
+      padding: 45px 25px;
       border-radius: var(--border-radius);
-      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+      box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4), inset 0 0 0 1px rgba(255, 255, 255, 0.6);
       transition: opacity 0.5s ease, transform 0.5s ease;
+      border: 1px solid var(--border-color);
     }
 
     .badge {
       display: inline-block;
-      background: #f4e8dc;
-      color: var(--primary);
-      font-weight: 600;
+      background: linear-gradient(135deg, var(--accent), var(--primary));
+      color: #ffffff;
+      font-weight: 700;
       font-size: 0.85rem;
-      padding: 6px 14px;
+      padding: 8px 18px;
       border-radius: 20px;
-      margin-bottom: 16px;
+      margin-bottom: 20px;
       text-transform: uppercase;
-      letter-spacing: 0.5px;
+      letter-spacing: 1px;
+      box-shadow: 0 4px 12px rgba(217, 119, 36, 0.3);
     }
 
     h1 {
-      font-size: 1.8rem;
-      color: var(--primary);
-      margin-bottom: 12px;
-      line-height: 1.2;
+      font-size: 1.9rem;
+      color: var(--primary-dark);
+      margin-bottom: 10px;
+      line-height: 1.25;
+      font-weight: 800;
     }
 
     p.subtitle {
-      color: var(--text-muted);
-      font-size: 0.95rem;
+      color: var(--accent);
+      font-size: 1.2rem;
+      font-weight: 700;
       margin-bottom: 30px;
+      font-style: italic;
     }
 
     .btn-action {
-      background: linear-gradient(135deg, var(--accent), var(--primary));
+      background: linear-gradient(135deg, var(--accent), #b35610);
       color: white;
       border: none;
-      padding: 16px 32px;
-      font-size: 1.05rem;
-      font-weight: 600;
+      padding: 18px 36px;
+      font-size: 1.1rem;
+      font-weight: 700;
       border-radius: 30px;
       cursor: pointer;
-      box-shadow: 0 4px 15px rgba(217, 119, 36, 0.3);
-      transition: transform 0.2s ease, box-shadow 0.2s ease;
+      box-shadow: 0 6px 20px rgba(217, 119, 36, 0.4);
+      transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.3s ease;
       width: 100%;
+      letter-spacing: 0.5px;
+    }
+
+    .btn-action:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 25px rgba(217, 119, 36, 0.5);
     }
 
     .btn-action:active {
       transform: scale(0.97);
     }
 
-    /* Sectiunea Fisa Tehnica (Ascunsa initial) */
+    /* Sectiunea Fisa Tehnica */
     #tech-sheet {
       display: none;
       opacity: 0;
@@ -108,43 +124,51 @@
 
     .card {
       background: var(--card-bg);
+      backdrop-filter: blur(10px);
       border-radius: var(--border-radius);
-      padding: 20px;
-      margin-bottom: 16px;
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+      padding: 22px;
+      margin-bottom: 18px;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.25), inset 0 0 0 1px rgba(255, 255, 255, 0.5);
+      border: 1px solid var(--border-color);
     }
 
     .card h2 {
-      font-size: 1.1rem;
-      color: var(--primary);
-      margin-bottom: 12px;
-      border-bottom: 2px solid #f2e6d9;
-      padding-bottom: 6px;
+      font-size: 1.15rem;
+      color: var(--primary-dark);
+      margin-bottom: 14px;
+      border-bottom: 2px solid rgba(217, 119, 36, 0.3);
+      padding-bottom: 8px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
     }
 
     .grid-nutrition {
       display: grid;
       grid-template-columns: repeat(2, 1fr);
-      gap: 10px;
+      gap: 12px;
     }
 
     .nutri-item {
-      background: #fdfaf7;
-      padding: 10px;
-      border-radius: 8px;
-      border: 1px solid #f0e2d5;
+      background: rgba(255, 255, 255, 0.85);
+      padding: 12px 10px;
+      border-radius: 12px;
+      border: 1px solid rgba(140, 90, 60, 0.15);
       text-align: center;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.03);
     }
 
     .nutri-item span {
       display: block;
       font-size: 0.8rem;
       color: var(--text-muted);
+      font-weight: 500;
     }
 
     .nutri-item strong {
-      font-size: 1rem;
-      color: var(--text);
+      font-size: 1.05rem;
+      color: var(--primary-dark);
+      font-weight: 700;
     }
 
     ul.info-list {
@@ -152,9 +176,10 @@
     }
 
     ul.info-list li {
-      padding: 6px 0;
+      padding: 8px 0;
       font-size: 0.95rem;
-      border-bottom: 1px dashed #efe4d8;
+      border-bottom: 1px dashed rgba(140, 90, 60, 0.2);
+      color: var(--text);
     }
 
     ul.info-list li:last-child {
@@ -162,19 +187,23 @@
     }
 
     .highlight-box {
-      background: #fff8f0;
+      background: rgba(217, 119, 36, 0.12);
       border-left: 4px solid var(--accent);
-      padding: 12px;
-      border-radius: 4px;
+      padding: 14px;
+      border-radius: 8px;
       font-size: 0.95rem;
-      margin-top: 8px;
+      color: var(--primary-dark);
+      margin-top: 10px;
+      line-height: 1.4;
     }
 
     .footer-note {
       text-align: center;
-      font-size: 0.8rem;
-      color: var(--text-muted);
-      margin-top: 20px;
+      font-size: 0.85rem;
+      color: #f3a660;
+      margin-top: 25px;
+      text-shadow: 0 2px 4px rgba(0,0,0,0.8);
+      font-weight: 500;
     }
   </style>
 </head>
@@ -183,26 +212,26 @@
   <div class="container">
     <!-- ECRAN BUN VENIT -->
     <div id="welcome-screen">
-      <span class="badge">Produs Artizanal</span>
+      <span class="badge">🌾 Produs Artizanal</span>
       <h1>PÂINE CU MAIA ȘI FĂINĂ INTEGRALĂ</h1>
       <p class="subtitle">"Gust de Gorj"</p>
-      <button class="btn-action" onclick="showSheet()">Vezi Fișa Tehnică</button>
+      <button class="btn-action" onclick="showSheet()">✨ Vezi Fișa Tehnică</button>
     </div>
 
     <!-- FIȘA TEHNICĂ (ANIMATĂ) -->
     <div id="tech-sheet">
       <div class="card">
-        <h2>Ingrediente & Alergeni</h2>
+        <h2>🥖 Ingrediente & Alergeni</h2>
         <p><strong>Ingrediente:</strong> făină integrală de grâu (Gorj), maia naturală, apă, sare iodată 1,8%</p>
-        <div class="highlight-box" style="margin-top:10px;">
-          <strong>Alergeni:</strong> GLUTEN
+        <div class="highlight-box">
+          ⚠️ <strong>Alergeni:</strong> GLUTEN
         </div>
       </div>
 
       <div class="card">
-        <h2>Valori Nutriționale / 100g</h2>
+        <h2>📊 Valori Nutriționale / 100g</h2>
         <div class="grid-nutrition">
-          <div class="nutri-item"><span>Valoare energetica</span><strong>221 kcal</strong></div>
+          <div class="nutri-item"><span>Valoare energetică</span><strong>221 kcal</strong></div>
           <div class="nutri-item"><span>Proteine</span><strong>7,2g</strong></div>
           <div class="nutri-item"><span>Grăsimi</span><strong>1,1g</strong></div>
           <div class="nutri-item"><span>Glucide</span><strong>44g</strong></div>
@@ -212,7 +241,7 @@
       </div>
 
       <div class="card">
-        <h2>Detalii Lot & Trasabilitate</h2>
+        <h2>📋 Detalii Lot & Trasabilitate</h2>
         <ul class="info-list">
           <li><strong>Lot:</strong> PAINE_MAIA_16.10.25</li>
           <li><strong>Coaptă la:</strong> 16.10.2025 | <strong>Valabilitate:</strong> 72h</li>
@@ -222,7 +251,7 @@
       </div>
 
       <div class="card">
-        <h2>Concept Zero Waste</h2>
+        <h2>Zero Waste</h2>
         <div class="highlight-box">
           💡 <em>"Pâinea uscată de azi = pesmetul aromat de mâine"</em>
         </div>
@@ -240,7 +269,7 @@
       const sheet = document.getElementById('tech-sheet');
 
       welcome.style.opacity = '0';
-      welcome.style.transform = 'scale(0.95)';
+      welcome.style.transform = 'scale(0.92)';
 
       setTimeout(() => {
         welcome.style.display = 'none';
